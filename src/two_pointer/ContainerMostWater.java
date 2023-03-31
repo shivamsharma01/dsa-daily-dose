@@ -1,3 +1,5 @@
+package two_pointer;
+
 /**
  * We have to form the largest rectangle possible such that while selecting a rectangle:
  * 1. its width is the gap between the towers we are considering and

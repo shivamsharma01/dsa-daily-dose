@@ -1,3 +1,4 @@
+package two_pointer;
 
 /*
   number will not start with 0
