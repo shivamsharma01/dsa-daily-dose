@@ -15,6 +15,7 @@ public class NextPermutation {
         System.out.println(getNextPermutation("1023"));
         System.out.println(getNextPermutation("3201"));
         System.out.println(getNextPermutation("10243"));
+        System.out.println(getNextPermutation("1991"));
     }
 
     private static String getNextPermutation(String str) {
@@ -47,6 +48,9 @@ public class NextPermutation {
             char temp = arr[firstSmallerIndex];
             arr[firstSmallerIndex] = arr[nextSmallestLargerIndex];
             arr[nextSmallestLargerIndex] = temp;
+
+            // this condition ensures that if two consecutive digits are swapped above, then that digit is excluded from swapping
+            if (nextSmallestLargerIndex == firstSmallerIndex +1 && arr[nextSmallestLargerIndex] == arr[len-1]) firstSmallerIndex++;
 
             for(int i=firstSmallerIndex+1, j = len-1; i<j; i++, j--) {
                 temp = arr[i];
