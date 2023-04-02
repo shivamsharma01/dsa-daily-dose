@@ -39,25 +39,29 @@ public class ArrayUtil {
         return set.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    public static void rotateArrayClockwise(int[] arr, int n, int numRotations) {
-        numRotations = numRotations%n;
+    public static void rotateArrayClockwise(int[] arr, int len, int numRotations) {
+        numRotations = numRotations%len;
         if (numRotations == 0) return;
 
-        int newArr[] = new int[n];
+        int newArr[] = new int[len];
         Arrays.sort(arr);
-        System.arraycopy(arr, n-numRotations, newArr, 0, numRotations);
-        System.arraycopy(arr, 0, newArr, numRotations, n-numRotations);
-        System.arraycopy(newArr, 0, arr, 0, n);
+        System.arraycopy(arr, len-numRotations, newArr, 0, numRotations);
+        System.arraycopy(arr, 0, newArr, numRotations, len-numRotations);
+        System.arraycopy(newArr, 0, arr, 0, len);
     }
-    
-    public static void rotateArrayAntiClockwise(int[] arr, int n, int numRotations) {
-        numRotations = numRotations%n;
+
+    public static void rotateArrayAntiClockwise(int[] arr, int len, int numRotations) {
+        numRotations = numRotations%len;
         if (numRotations == 0) return;
 
-        int newArr[] = new int[n];
+        int newArr[] = new int[len];
         Arrays.sort(arr);
-        System.arraycopy(arr, numRotations, newArr, 0, n-numRotations);
-        System.arraycopy(arr, 0, newArr, n-numRotations, numRotations);
-        System.arraycopy(newArr, 0, arr, 0, n);
+        System.arraycopy(arr, numRotations, newArr, 0, len-numRotations);
+        System.arraycopy(arr, 0, newArr, len-numRotations, numRotations);
+        System.arraycopy(newArr, 0, arr, 0, len);
+    }
+
+    public static int getRandomElementFromArray(int arr[], int len) {
+        return arr[random.nextInt(len)];
     }
 }
