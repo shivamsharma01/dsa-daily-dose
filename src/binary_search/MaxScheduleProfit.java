@@ -3,6 +3,9 @@ package binary_search;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/*
+    https://www.tutorialspoint.com/maximum-profit-in-job-scheduling-in-cplusplus
+ */
 public class MaxScheduleProfit {
     public static void main(String[] args) {
         int startTime[], endTime[], profit[];
@@ -28,6 +31,15 @@ public class MaxScheduleProfit {
             this.end = e;
             this.profit = p;
         }
+
+        @Override
+        public String toString() {
+            return "Schedule{" +
+                    "start=" + start +
+                    ", end=" + end +
+                    ", profit=" + profit +
+                    '}';
+        }
     }
 
     private static int calculateMaxProfit(int[] startTime, int[] endTime, int[] profit) {
@@ -39,8 +51,8 @@ public class MaxScheduleProfit {
         Arrays.sort(schedules, Comparator.comparingInt(o -> o.end));
 
         int dpProfit[] = new int[n];
-        dpProfit[0] = schedules[0].profit;
 
+        dpProfit[0] = schedules[0].profit;
         for (int i = 1; i < n; i++) {
             int low = 0, high = i - 1, mid;
             while (low < high) {
