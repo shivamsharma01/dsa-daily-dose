@@ -61,6 +61,12 @@ public class ArrayUtil {
         System.arraycopy(newArr, 0, arr, 0, len);
     }
 
+    public static void swap(int arr[], int i1, int i2) {
+        int temp = arr[i1];
+        arr[i1] = arr[i2];
+        arr[i2] = temp;
+    }
+
     public static int getRandomElementFromArray(int arr[], int len) {
         return arr[random.nextInt(len)];
     }
