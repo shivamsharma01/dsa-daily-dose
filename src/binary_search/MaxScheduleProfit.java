@@ -21,27 +21,6 @@ public class MaxScheduleProfit {
         System.out.println("Max Profit: " + calculateMaxProfit(startTime, endTime, profit));
     }
 
-    static class Schedule {
-        int start;
-        int end;
-        int profit;
-
-        public Schedule(int s, int e, int p) {
-            this.start = s;
-            this.end = e;
-            this.profit = p;
-        }
-
-        @Override
-        public String toString() {
-            return "Schedule{" +
-                    "start=" + start +
-                    ", end=" + end +
-                    ", profit=" + profit +
-                    '}';
-        }
-    }
-
     private static int calculateMaxProfit(int[] startTime, int[] endTime, int[] profit) {
         int n = startTime.length;
 
@@ -70,5 +49,26 @@ public class MaxScheduleProfit {
             dpProfit[i] = Math.max(dpProfit[i], dpProfit[i - 1]);
         }
         return dpProfit[n - 1];
+    }
+
+    static class Schedule {
+        int start;
+        int end;
+        int profit;
+
+        public Schedule(int s, int e, int p) {
+            this.start = s;
+            this.end = e;
+            this.profit = p;
+        }
+
+        @Override
+        public String toString() {
+            return "Schedule{" +
+                    "start=" + start +
+                    ", end=" + end +
+                    ", profit=" + profit +
+                    '}';
+        }
     }
 }

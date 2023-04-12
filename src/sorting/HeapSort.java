@@ -10,11 +10,11 @@ public class HeapSort {
         int n = arr.length;
 
         // build heap
-        for (int i=n/2-1; i>=0; i--)
+        for (int i = n / 2 - 1; i >= 0; i--)
             heapify(arr, i, n);
 
         // heap sort
-        for (int i=n-1; i>=0; i--) {
+        for (int i = n - 1; i >= 0; i--) {
             ArrayUtil.swap(arr, 0, i);
             heapify(arr, 0, i);
         }
@@ -41,7 +41,7 @@ public class HeapSort {
 
 class HeapSortRunner {
     public static void main(String[] args) {
-        int arr[] = new int[] {21, 5, 1, 4, 2, 9, 3, 1, 14, 17, 4, 22};
+        int arr[] = new int[]{21, 5, 1, 4, 2, 9, 3, 1, 14, 17, 4, 22};
         System.out.println(Arrays.toString(arr));
         HeapSort.sort(arr);
         System.out.println(Arrays.toString(arr));

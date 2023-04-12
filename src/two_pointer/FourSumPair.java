@@ -11,35 +11,26 @@ public class FourSumPair {
         int sum = 41;
         getFourSumPairs(arr, sum);
     }
-    static class Pair {
-        int sum;
-        int first;
-        int second;
-        public Pair(int sum, int first, int second) {
-            this.sum = sum;
-            this.first = first;
-            this.second = second;
-        }
-    }
+
     private static void getFourSumPairs(int[] arr, int x) {
         Map<Integer, List<Pair>> map = new HashMap<>();
         int sum;
         List<Pair> pairList;
-        for (int i=0; i<arr.length-1; i++) {
-            for(int j=i+1; j<arr.length; j++) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 sum = arr[i] + arr[j];
                 pairList = map.getOrDefault(sum, new ArrayList<>());
                 pairList.add(new Pair(sum, i, j));
                 map.put(sum, pairList);
             }
         }
-        for (int i=0; i<arr.length-1; i++) {
-            for(int j=i+1; j<arr.length; j++) {
-                sum = x-arr[i]-arr[j];
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                sum = x - arr[i] - arr[j];
                 if (map.containsKey(sum)) {
                     pairList = map.get(sum);
-                    for (Pair pair: pairList) {
-                        if(allDiff(pair, i, j) && isUnique(pair, i, j)) {
+                    for (Pair pair : pairList) {
+                        if (allDiff(pair, i, j) && isUnique(pair, i, j)) {
                             System.out.println(String.format("Sum can be formed with (%d:idx=%d), (%d:idx=%d), (%d:idx=%d), (%d:idx=%d)", arr[i], i, arr[j], j,
                                     arr[pair.first], pair.first, arr[pair.second], pair.second));
                         }
@@ -55,5 +46,17 @@ public class FourSumPair {
 
     private static boolean allDiff(Pair pair, int i, int j) {
         return i != pair.first && i != pair.second && j != pair.first && j != pair.second;
+    }
+
+    static class Pair {
+        int sum;
+        int first;
+        int second;
+
+        public Pair(int sum, int first, int second) {
+            this.sum = sum;
+            this.first = first;
+            this.second = second;
+        }
     }
 }

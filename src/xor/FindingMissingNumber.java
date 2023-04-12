@@ -17,16 +17,16 @@ public class FindingMissingNumber {
 
         n = 100;
         set = IntStream.rangeClosed(start, n).boxed().collect(Collectors.toSet());
-        numRemoved = (int)(Math.random()*n)+1;
-        System.out.println("Num removed = "+numRemoved);
+        numRemoved = (int) (Math.random() * n) + 1;
+        System.out.println("Num removed = " + numRemoved);
         set.remove(numRemoved);
         System.out.println(getMissing(set.stream().mapToInt(Integer::intValue).toArray(), n));
 
 
         n = 5;
         set = IntStream.rangeClosed(start, n).boxed().collect(Collectors.toSet());
-        numRemoved = (int)(Math.random()*n)+1;
-        System.out.println("Num removed = "+numRemoved);
+        numRemoved = (int) (Math.random() * n) + 1;
+        System.out.println("Num removed = " + numRemoved);
         set.remove(numRemoved);
         System.out.println(getMissing(set.stream().mapToInt(Integer::intValue).toArray(), n));
 
@@ -34,8 +34,8 @@ public class FindingMissingNumber {
 
     private static int getMissing(int[] arr, int n) {
         int xor = 0;
-        for (int i=1; i<=n; i++) xor ^= i;
-        for (int num: arr) xor ^= num;
+        for (int i = 1; i <= n; i++) xor ^= i;
+        for (int num : arr) xor ^= num;
         return xor;
     }
 }
