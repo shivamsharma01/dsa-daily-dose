@@ -13,12 +13,12 @@ public class LongestSubArraySubWithSumK {
 
         map.put(prefixSum, 0);
 
-        for (int i=1; i<N; i++) {
+        for (int i = 1; i < N; i++) {
             prefixSum += A[i];
             if (!map.containsKey(prefixSum)) map.put(prefixSum, i);
-            if(prefixSum == K) lengthOfLongestSubArrayWithSumK = i+1;
-            else if (map.containsKey(prefixSum-K)) {
-                lengthOfLongestSubArrayWithSumK = Math.max(lengthOfLongestSubArrayWithSumK, i - map.get(prefixSum-K));
+            if (prefixSum == K) lengthOfLongestSubArrayWithSumK = i + 1;
+            else if (map.containsKey(prefixSum - K)) {
+                lengthOfLongestSubArrayWithSumK = Math.max(lengthOfLongestSubArrayWithSumK, i - map.get(prefixSum - K));
             }
         }
 
@@ -26,7 +26,7 @@ public class LongestSubArraySubWithSumK {
     }
 
     public static void main(String[] args) {
-        int arr[] = new int[] {4, 2, 5, 3, 1, 0, -1};
+        int arr[] = new int[]{4, 2, 5, 3, 1, 0, -1};
         System.out.println(lenOfLongSubArr(arr, arr.length, 8));
     }
 }
