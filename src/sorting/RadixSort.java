@@ -22,7 +22,7 @@ public class RadixSort {
             int n = arr.length, digitPlace = 0;
             while (maxLengthNum-- != 0) {
                 Node arrayforEachDigit0to9[] = new Node[10];
-                for (int i=0; i<n; i++) {
+                for (int i = 0; i < n; i++) {
                     add(arrayforEachDigit0to9, arr[i], index(arr[i], digitPlace));
                 }
                 collectSortedInArr(arr, arrayforEachDigit0to9);
@@ -37,6 +37,7 @@ public class RadixSort {
             }
             return num % 10;
         }
+
         private static void add(Node arr[], int num, int index) {
             Node newNode = new Node(num);
             if (arr[index] == null) {
