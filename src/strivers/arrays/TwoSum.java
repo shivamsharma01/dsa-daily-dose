@@ -28,7 +28,7 @@ public class TwoSum {
 
     private static void getTwoSumUsingHashMap(int arr[], int target) {
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             if (map.containsKey(target - arr[i])) {
                 System.out.println("Target sum " + target + " can be formed using " + map.get(target - arr[i]) + " present at index " + arr[map.get(target - arr[i])] + " and " + arr[i] + " present at index " + i);
                 return;
