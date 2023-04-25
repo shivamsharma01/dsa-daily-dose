@@ -23,8 +23,7 @@ public class JDBCConnectionPool extends ObjectPool<Connection> {
     Connection create() {
         try {
             return (DriverManager.getConnection(dsn, usr, pwd));
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return (null);
         }
@@ -40,7 +39,7 @@ public class JDBCConnectionPool extends ObjectPool<Connection> {
 
     boolean validate(Connection o) {
         try {
-            return (!((Connection)o).isClosed());
+            return (!((Connection) o).isClosed());
         } catch (SQLException e) {
             e.printStackTrace();
             return (false);

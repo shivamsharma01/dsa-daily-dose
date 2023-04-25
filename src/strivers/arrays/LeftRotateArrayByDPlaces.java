@@ -12,12 +12,12 @@ public class LeftRotateArrayByDPlaces {
     }
 
     public static void main(String[] args) {
-        for (int d=1; d<=3; d++) {
-            for (int i=1; i<=10; i++) {
+        for (int d = 1; d <= 3; d++) {
+            for (int i = 1; i <= 10; i++) {
                 int arr[] = IntStream.rangeClosed(1, i).toArray();
                 System.out.println("Original Array");
                 System.out.println(Arrays.toString(arr));
-                System.out.println("Rotating the array left "+d+" times");
+                System.out.println("Rotating the array left " + d + " times");
                 leftRotateArrayByD(arr, d);
                 //leftRotate(arr, d, arr.length);
                 System.out.println(Arrays.toString(arr));

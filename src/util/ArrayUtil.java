@@ -1,6 +1,5 @@
 package util;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -45,7 +44,7 @@ public class ArrayUtil {
         numRotations %= len;
         if (numRotations == 0) return;
         int gcd = MathUtil.gcd(len, numRotations);
-        for (int i=0; i<gcd; i++) {
+        for (int i = 0; i < gcd; i++) {
             int temp = arr[i];
             int j = i, k;
             while (true) {
@@ -66,7 +65,7 @@ public class ArrayUtil {
         numRotations %= len;
         if (numRotations == 0) return;
         int gcd = MathUtil.gcd(len, numRotations);
-        for (int i=0; i<gcd; i++) {
+        for (int i = 0; i < gcd; i++) {
             int temp = arr[i];
             int j = i, k;
             while (true) {
