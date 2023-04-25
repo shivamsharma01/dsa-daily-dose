@@ -7,6 +7,7 @@ public class KadaneMaximumSumSubArray {
         getMaxSumSubArray(new int[]{1, -2}, 2);
         getMaxSumSubArray(new int[]{-1, -2}, 2);
         getMaxSumSubArray(new int[]{2, -1}, 2);
+        getMaxSumSubArray(new int[]{-2, 1}, 2);
         getMaxSumSubArray(new int[]{1, -2, 3}, 3);
         getMaxSumSubArray(new int[]{3, -2, 3}, 3);
         getMaxSumSubArray(new int[]{-1, -2, -3}, 3);
@@ -17,8 +18,8 @@ public class KadaneMaximumSumSubArray {
     }
 
     private static void getMaxSumSubArray(int[] arr, int n) {
-        int maxSum = arr[0], sumStart = 0, sumEnd = 0, curSum = arr[0], curStart = 0;
-        for (int i = 1; i < n; i++) {
+        int maxSum = Integer.MIN_VALUE, sumStart = 0, sumEnd = 0, curSum = 0, curStart = 0;
+        for (int i = 0; i < n; i++) {
             curSum += arr[i];
             if (curSum >= maxSum) {
                 sumStart = curStart;
