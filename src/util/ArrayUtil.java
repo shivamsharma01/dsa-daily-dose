@@ -40,26 +40,46 @@ public class ArrayUtil {
         return set.stream().mapToInt(Integer::intValue).toArray();
     }
 
+    // Juggling Algorithm
     public static void rotateArrayClockwise(int[] arr, int len, int numRotations) {
-        numRotations = numRotations % len;
+        numRotations %= len;
         if (numRotations == 0) return;
-
-        int newArr[] = new int[len];
-        Arrays.sort(arr);
-        System.arraycopy(arr, len - numRotations, newArr, 0, numRotations);
-        System.arraycopy(arr, 0, newArr, numRotations, len - numRotations);
-        System.arraycopy(newArr, 0, arr, 0, len);
+        int gcd = MathUtil.gcd(len, numRotations);
+        for (int i=0; i<gcd; i++) {
+            int temp = arr[i];
+            int j = i, k;
+            while (true) {
+                k = j - numRotations;
+                if (k < 0)
+                    k = len + k;
+                if (k == i)
+                    break;
+                arr[j] = arr[k];
+                j = k;
+            }
+            arr[j] = temp;
+        }
     }
 
+    // Juggling Algorithm
     public static void rotateArrayAntiClockwise(int[] arr, int len, int numRotations) {
-        numRotations = numRotations % len;
+        numRotations %= len;
         if (numRotations == 0) return;
-
-        int newArr[] = new int[len];
-        Arrays.sort(arr);
-        System.arraycopy(arr, numRotations, newArr, 0, len - numRotations);
-        System.arraycopy(arr, 0, newArr, len - numRotations, numRotations);
-        System.arraycopy(newArr, 0, arr, 0, len);
+        int gcd = MathUtil.gcd(len, numRotations);
+        for (int i=0; i<gcd; i++) {
+            int temp = arr[i];
+            int j = i, k;
+            while (true) {
+                k = j + numRotations;
+                if (k >= len)
+                    k = k - len;
+                if (k == i)
+                    break;
+                arr[j] = arr[k];
+                j = k;
+            }
+            arr[j] = temp;
+        }
     }
 
     public static void swap(int arr[], int i1, int i2) {
