@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class LargestSubArrayWithValueK {
     public static void main(String[] args) {
-        int arr[], k;
+        int[] arr;
+        int k;
         arr = new int[]{1, 4, 5, 6, 10, -10};
         k = 15;
         System.out.println(getLargestSubArrayWithValueK(arr, k));

@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class MoveZeroesToEnd {
 
-    private static void moveZero(int arr[]) {
+    private static void moveZero(int[] arr) {
         int n = arr.length;
         int zeroIndex, idx = 0;
         while (idx < n && arr[idx] != 0) idx++;
@@ -20,7 +20,7 @@ public class MoveZeroesToEnd {
     }
 
     public static void main(String[] args) {
-        int arr[] = new int[]{73348, 66106, -85359, 53996, 18849, -6590, -53381, -86613, -41065, 83457, 0};
+        int[] arr = new int[]{73348, 66106, -85359, 53996, 18849, -6590, -53381, -86613, -41065, 83457, 0};
         moveZero(arr);
         System.out.println(Arrays.toString(arr));
     }

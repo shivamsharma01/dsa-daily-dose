@@ -15,14 +15,14 @@ public class FindElementInRotatedArray {
     }
 
     private static void runner(int n, int maxArrayVal, int numRotations) {
-        int arr[] = ArrayUtil.generateArray(maxArrayVal, n, false);
+        int[] arr = ArrayUtil.generateArray(maxArrayVal, n, false);
         ArrayUtil.rotateArrayClockwise(arr, n, numRotations);
         System.out.println("Rotated Sorted Array is: " + Arrays.toString(arr));
         int randomElementFromTheArray = ArrayUtil.getRandomElementFromArray(arr, n);
         System.out.printf("Element %d is present at index: %d\n\n", randomElementFromTheArray, findElementInRotatedArray(arr, n, randomElementFromTheArray));
     }
 
-    private static int findElementInRotatedArray(int arr[], int len, int x) {
+    private static int findElementInRotatedArray(int[] arr, int len, int x) {
         int l = 0, h = len - 1, m;
         while (l <= h) {
             m = l + (h - l) / 2;

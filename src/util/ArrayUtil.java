@@ -14,7 +14,7 @@ public class ArrayUtil {
      *
      */
     public static int[] generateArray(int maxVal, int len, boolean isZeroAllowed) {
-        int arr[] = new int[len];
+        int[] arr = new int[len];
         int minVal = isZeroAllowed ? 0 : 1;
         for (int i = 0; i < len; i++) {
             arr[i] = random.nextInt(maxVal + 1) + minVal;
@@ -81,13 +81,13 @@ public class ArrayUtil {
         }
     }
 
-    public static void swap(int arr[], int i1, int i2) {
+    public static void swap(int[] arr, int i1, int i2) {
         int temp = arr[i1];
         arr[i1] = arr[i2];
         arr[i2] = temp;
     }
 
-    public static int getRandomElementFromArray(int arr[], int len) {
+    public static int getRandomElementFromArray(int[] arr, int len) {
         return arr[random.nextInt(len)];
     }
 }

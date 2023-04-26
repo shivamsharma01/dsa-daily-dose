@@ -2,7 +2,7 @@ package strivers.arrays;
 
 public class FindKInArr {
 
-    public int searchInSorted(int arr[], int N, int K) {
+    public int searchInSorted(int[] arr, int N, int K) {
         int low = 0, high = N - 1;
 
         while (low <= high) {

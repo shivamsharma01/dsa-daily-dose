@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class FourSumPair {
     public static void main(String[] args) {
-        int arr[] = new int[]{1, 2, 5, 6, 7, 16, 12, 55, 70, 19};
+        int[] arr = new int[]{1, 2, 5, 6, 7, 16, 12, 55, 70, 19};
         int sum = 41;
         getFourSumPairs(arr, sum);
     }
@@ -49,9 +49,9 @@ public class FourSumPair {
     }
 
     static class Pair {
-        int sum;
-        int first;
-        int second;
+        final int sum;
+        final int first;
+        final int second;
 
         public Pair(int sum, int first, int second) {
             this.sum = sum;

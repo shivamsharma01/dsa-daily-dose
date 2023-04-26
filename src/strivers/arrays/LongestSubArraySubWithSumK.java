@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class LongestSubArraySubWithSumK {
 
-    public static int lenOfLongSubArr(int A[], int N, int K) {
+    public static int lenOfLongSubArr(int[] A, int N, int K) {
         long prefixSum = A[0];
         Map<Long, Integer> map = new HashMap<>();
 
@@ -26,7 +26,7 @@ public class LongestSubArraySubWithSumK {
     }
 
     public static void main(String[] args) {
-        int arr[] = new int[]{4, 2, 5, 3, 1, 0, -1};
+        int[] arr = new int[]{4, 2, 5, 3, 1, 0, -1};
         System.out.println(lenOfLongSubArr(arr, arr.length, 8));
     }
 }

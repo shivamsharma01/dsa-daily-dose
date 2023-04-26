@@ -10,7 +10,7 @@ package two_pointer;
  **/
 public class ContainerMostWater {
     public static void main(String[] args) {
-        int arr[];
+        int[] arr;
         arr = new int[]{2, 8, 4, 6, 11, 1};
         System.out.println(getMostWaterForContainer(arr, arr.length));
     }

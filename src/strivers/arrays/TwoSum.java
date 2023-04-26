@@ -7,13 +7,13 @@ import java.util.Map;
 public class TwoSum {
 
     public static void main(String[] args) {
-        int arr[] = new int[]{1, 4, 2, 1, 6, 2, 8, 12, 15};
+        int[] arr = new int[]{1, 4, 2, 1, 6, 2, 8, 12, 15};
         int k = 14;
         getTwoSumUsingHashMap(arr, k);
         getTwoSumUsingTwoPointers(arr, k);
     }
 
-    private static void getTwoSumUsingTwoPointers(int arr[], int target) {
+    private static void getTwoSumUsingTwoPointers(int[] arr, int target) {
         Arrays.sort(arr);
         int left = 0, right = arr.length - 1;
         while (left != right) {
@@ -26,7 +26,7 @@ public class TwoSum {
         }
     }
 
-    private static void getTwoSumUsingHashMap(int arr[], int target) {
+    private static void getTwoSumUsingHashMap(int[] arr, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
             if (map.containsKey(target - arr[i])) {

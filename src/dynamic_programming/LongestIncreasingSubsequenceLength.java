@@ -5,7 +5,9 @@ package dynamic_programming;
  */
 public class LongestIncreasingSubsequenceLength {
     public static int lengthOfLIS(int[] nums) {
-        int n = nums.length, dp[] = new int[n], ans = 0;
+        int n = nums.length;
+        int[] dp = new int[n];
+        int ans = 0;
         for (int i = 0; i < n; i++) {
             int low = 0, high = ans;
             while (low != high) {

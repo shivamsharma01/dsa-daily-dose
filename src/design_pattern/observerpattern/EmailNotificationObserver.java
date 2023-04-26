@@ -1,8 +1,8 @@
 package design_pattern.observerpattern;
 
 public class EmailNotificationObserver implements NotificationObserver {
-    String emailId;
-    StockObservable stockObservable;
+    final String emailId;
+    final StockObservable stockObservable;
 
     public EmailNotificationObserver(String emailId, StockObservable stockObservable) {
         this.emailId = emailId;

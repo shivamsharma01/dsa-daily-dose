@@ -2,7 +2,9 @@ package two_pointer;
 
 public class ClosestTwoSumPairToK {
     public static void main(String[] args) {
-        int arr1[], arr2[], k = 70;
+        int[] arr1;
+        int[] arr2;
+        int k = 70;
         arr1 = new int[]{1, 4, 9, 25, 40};
         arr2 = new int[]{15, 22, 34, 40, 49, 60};
         findClosestPair(arr1, arr2, k);

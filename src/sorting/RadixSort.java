@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class RadixSort {
 
-    public static void sort(int arr[]) {
+    public static void sort(int[] arr) {
         int maxNum = Arrays.stream(arr).max().getAsInt();
         int d = 0;
 
@@ -18,10 +18,10 @@ public class RadixSort {
 
     static class BucketSort {
 
-        public static void sort(int arr[], int maxLengthNum) {
+        public static void sort(int[] arr, int maxLengthNum) {
             int n = arr.length, digitPlace = 0;
             while (maxLengthNum-- != 0) {
-                Node arrayforEachDigit0to9[] = new Node[10];
+                Node[] arrayforEachDigit0to9 = new Node[10];
                 for (int i = 0; i < n; i++) {
                     add(arrayforEachDigit0to9, arr[i], index(arr[i], digitPlace));
                 }
@@ -38,7 +38,7 @@ public class RadixSort {
             return num % 10;
         }
 
-        private static void add(Node arr[], int num, int index) {
+        private static void add(Node[] arr, int num, int index) {
             Node newNode = new Node(num);
             if (arr[index] == null) {
                 // if the bucket is currently empty just create a new node and consider that as the bucket
@@ -49,7 +49,7 @@ public class RadixSort {
             }
         }
 
-        private static void placeInSortedLinkedList(Node arr[], int index, Node newNode) {
+        private static void placeInSortedLinkedList(Node[] arr, int index, Node newNode) {
             Node headNode = arr[index];
             Node prevNode = null, curNode = headNode;
             while (curNode != null) {
@@ -72,7 +72,7 @@ public class RadixSort {
             prevNode.next = newNode;
         }
 
-        private static void collectSortedInArr(int num[], Node arr[]) {
+        private static void collectSortedInArr(int[] num, Node[] arr) {
             int idx = 0;
             for (Node node : arr) {
                 if (node == null) continue;
@@ -84,7 +84,7 @@ public class RadixSort {
         }
 
         static class Node {
-            int num;
+            final int num;
             Node next;
 
             Node(int num) {
@@ -100,7 +100,7 @@ public class RadixSort {
 
 class RadixSortRunner {
     public static void main(String[] args) {
-        int arr[] = new int[]{21, 5, 1, 4, 2, 9, 3, 1, 14, 17, 4, 22};
+        int[] arr = new int[]{21, 5, 1, 4, 2, 9, 3, 1, 14, 17, 4, 22};
         System.out.println(Arrays.toString(arr));
         RadixSort.sort(arr);
         System.out.println(Arrays.toString(arr));

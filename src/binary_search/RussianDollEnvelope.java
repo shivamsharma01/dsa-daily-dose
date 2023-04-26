@@ -11,7 +11,7 @@ import java.util.Comparator;
  */
 public class RussianDollEnvelope {
     public static void main(String[] args) {
-        int arr[][] = new int[][]{{1, 3}, {3, 4}, {2, 5}, {3, 6}};
+        int[][] arr = new int[][]{{1, 3}, {3, 4}, {2, 5}, {3, 6}};
         System.out.println(getMaxEnvelopes(arr));
     }
 

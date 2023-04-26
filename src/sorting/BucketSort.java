@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class BucketSort {
 
-    public static void sort(float arr[]) {
-        Node arrayforEachDigit0to9[] = new Node[10];
+    public static void sort(float[] arr) {
+        Node[] arrayforEachDigit0to9 = new Node[10];
 
         for (float f : arr) {
             add(arrayforEachDigit0to9, f);
@@ -13,7 +13,7 @@ public class BucketSort {
         collectSortedInArr(arr, arrayforEachDigit0to9);
     }
 
-    private static void add(Node arr[], float num) {
+    private static void add(Node[] arr, float num) {
         int index = (int) (num * 10) % 10;
         Node newNode = new Node(num);
         if (arr[index] == null) {
@@ -25,7 +25,7 @@ public class BucketSort {
         }
     }
 
-    private static void placeInSortedLinkedList(Node arr[], int index, Node newNode) {
+    private static void placeInSortedLinkedList(Node[] arr, int index, Node newNode) {
         Node headNode = arr[index];
         Node prevNode = null, curNode = headNode;
         while (curNode != null) {
@@ -48,7 +48,7 @@ public class BucketSort {
         prevNode.next = newNode;
     }
 
-    private static void collectSortedInArr(float num[], Node arr[]) {
+    private static void collectSortedInArr(float[] num, Node[] arr) {
         int idx = 0;
         for (Node node : arr) {
             if (node == null) continue;
@@ -60,7 +60,7 @@ public class BucketSort {
     }
 
     static class Node {
-        float num;
+        final float num;
         Node next;
 
         Node(float f) {
@@ -74,7 +74,7 @@ public class BucketSort {
 
 class BucketSortRunner {
     public static void main(String[] args) {
-        float arr[] = new float[]{0.21f, 0.5f, 0.1f, 0.4f, 0.2f, 0.9f, 0.3f, 0.1f, 0.14f, 0.17f, 0.4f, 0.22f};
+        float[] arr = new float[]{0.21f, 0.5f, 0.1f, 0.4f, 0.2f, 0.9f, 0.3f, 0.1f, 0.14f, 0.17f, 0.4f, 0.22f};
         System.out.println(Arrays.toString(arr));
         BucketSort.sort(arr);
         System.out.println(Arrays.toString(arr));

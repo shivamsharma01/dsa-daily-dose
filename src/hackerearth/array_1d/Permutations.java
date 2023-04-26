@@ -7,12 +7,12 @@ import java.util.Scanner;
  */
 public class Permutations {
 
-    public static void main(String args[]) throws Exception {
+    public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int q = s.nextInt();
 
-        int arr[] = new int[n], leftMax[] = new int[n], rightMax[] = new int[n];
+        int[] arr = new int[n], leftMax = new int[n], rightMax = new int[n];
         for (int i = 0; i < n; i++) arr[i] = s.nextInt();
 
         leftMax[0] = -1;

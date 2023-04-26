@@ -1,8 +1,8 @@
 package design_pattern.observerpattern;
 
 public class PhoneNotificationObserver implements NotificationObserver {
-    String phoneNo;
-    StockObservable stockObservable;
+    final String phoneNo;
+    final StockObservable stockObservable;
 
     public PhoneNotificationObserver(String phoneNo, StockObservable observable) {
         this.phoneNo = phoneNo;

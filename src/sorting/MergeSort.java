@@ -13,8 +13,8 @@ public class MergeSort {
         }
     }
 
-    private static void merge(int arr[], int low, int mid, int high) {
-        int a1[] = new int[mid - low + 1], a2[] = new int[high - mid];
+    private static void merge(int[] arr, int low, int mid, int high) {
+        int[] a1 = new int[mid - low + 1], a2 = new int[high - mid];
 
         for (int i = 0; i < a1.length; i++)
             a1[i] = arr[i + low];
@@ -36,7 +36,7 @@ public class MergeSort {
 
 class MergeSortRunner {
     public static void main(String[] args) {
-        int arr[] = new int[]{21, 5, 1, 4, 2, 9, 3, 1, 14, 17, 4, 22};
+        int[] arr = new int[]{21, 5, 1, 4, 2, 9, 3, 1, 14, 17, 4, 22};
         System.out.println(Arrays.toString(arr));
         MergeSort.sort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));

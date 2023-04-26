@@ -4,9 +4,10 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 
 public abstract class ObjectPool<T> {
-    long deadTime;
+    final long deadTime;
 
-    Hashtable<T, Long> lock, unlock;
+    final Hashtable<T, Long> lock;
+    final Hashtable<T, Long> unlock;
 
     ObjectPool() {
         deadTime = 50000; // 50 seconds
