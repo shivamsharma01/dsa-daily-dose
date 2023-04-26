@@ -6,7 +6,7 @@ public class IntersectionTwoArrays {
 
     public static ArrayList<Integer> findIntersection(int arr1[], int arr2[], int n, int m) {
         ArrayList<Integer> ans = new ArrayList<>();
-        int i1 = 0, i2 = 0, len = 0;
+        int i1 = 0, i2 = 0;
         while (i1 != n && i2 != m) {
             if (arr1[i1] < arr2[i2]) {
                 i1++;

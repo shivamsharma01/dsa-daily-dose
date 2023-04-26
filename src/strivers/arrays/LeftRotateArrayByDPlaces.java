@@ -19,7 +19,6 @@ public class LeftRotateArrayByDPlaces {
                 System.out.println(Arrays.toString(arr));
                 System.out.println("Rotating the array left " + d + " times");
                 leftRotateArrayByD(arr, d);
-                //leftRotate(arr, d, arr.length);
                 System.out.println(Arrays.toString(arr));
                 System.out.println("============================");
             }

@@ -14,7 +14,6 @@ public class LargestSubArrayWithValueK {
 
     private static int getLargestSubArrayWithValueK(int[] arr, int k) {
         int maxSubArray = 0;
-        // key = prefix sum, val = index
         Map<Long, Integer> map = new HashMap<>();
         long sum = 0;
         for (int i = 0; i < arr.length; i++) {

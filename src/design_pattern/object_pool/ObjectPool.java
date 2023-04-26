@@ -10,8 +10,8 @@ public abstract class ObjectPool<T> {
 
     ObjectPool() {
         deadTime = 50000; // 50 seconds
-        lock = new Hashtable<T, Long>();
-        unlock = new Hashtable<T, Long>();
+        lock = new Hashtable<>();
+        unlock = new Hashtable<>();
     }
 
     abstract T create();
@@ -27,22 +27,15 @@ public abstract class ObjectPool<T> {
             Enumeration<T> e = unlock.keys();
             while (e.hasMoreElements()) {
                 t = e.nextElement();
-                if ((now - unlock.get(t)) > deadTime) {
-                    // object has dead
+                if ((now - unlock.get(t)) > deadTime || !validate(t)) {
+                    // dead condition true
                     unlock.remove(t);
                     dead(t);
                     t = null;
                 } else {
-                    if (validate(t)) {
-                        unlock.remove(t);
-                        lock.put(t, now);
-                        return (t);
-                    } else {
-                        // object failed validation
-                        unlock.remove(t);
-                        dead(t);
-                        t = null;
-                    }
+                    unlock.remove(t);
+                    lock.put(t, now);
+                    return (t);
                 }
             }
         }

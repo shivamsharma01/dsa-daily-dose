@@ -1,6 +1,6 @@
 package strivers.arrays;
 
-public class RemoveDuplicatedFromSorted {
+public class RemoveDuplicatesFromSorted {
 
     public int removeDuplicates(int[] nums) {
         int uniqueIndex = 0;

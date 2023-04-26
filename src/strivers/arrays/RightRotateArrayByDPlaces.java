@@ -19,7 +19,6 @@ public class RightRotateArrayByDPlaces {
                 System.out.println(Arrays.toString(arr));
                 System.out.println("Rotating the array right " + d + " times");
                 rightRotateArrayByD(arr, d);
-                //leftRotate(arr, d, arr.length);
                 System.out.println(Arrays.toString(arr));
                 System.out.println("============================");
             }
