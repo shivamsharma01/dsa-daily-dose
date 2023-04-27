@@ -4,46 +4,28 @@ import java.util.ArrayList;
 
 public class UnionTwoArrays {
 
+    private static void add(int arr[], ArrayList<Integer> result, int idx) {
+        if (arr[idx] != result.get(result.size()-1)) {
+            result.add(arr[idx]);
+        }
+    }
+
     public static ArrayList<Integer> findUnion(int[] arr1, int[] arr2, int n, int m) {
         ArrayList<Integer> ans = new ArrayList<>();
         ans.add(Math.min(arr1[0], arr2[0]));
-        int i1 = 0, i2 = 0, len = 0;
+        int i1 = 0, i2 = 0;
         while (i1 != n && i2 != m) {
             if (arr1[i1] < arr2[i2]) {
-                if (arr1[i1] != ans.get(len)) {
-                    ans.add(arr1[i1]);
-                    len++;
-                }
-                i1++;
+                add(arr1, ans, i1++);
             } else if (arr1[i1] > arr2[i2]) {
-                if (arr2[i2] != ans.get(len)) {
-                    ans.add(arr2[i2]);
-                    len++;
-                }
-                i2++;
+                add(arr2, ans, i2++);
             } else {
-                if (arr1[i1] != ans.get(len)) {
-                    ans.add(arr1[i1]);
-                    len++;
-                }
-                i1++;
+                add(arr1, ans, i1++);
                 i2++;
             }
         }
-        while (i1 != n) {
-            if (arr1[i1] != ans.get(len)) {
-                ans.add(arr1[i1]);
-                len++;
-            }
-            i1++;
-        }
-        while (i2 != m) {
-            if (arr2[i2] != ans.get(len)) {
-                ans.add(arr2[i2]);
-                len++;
-            }
-            i2++;
-        }
+        while (i1 != n) add(arr1, ans, i1++);
+        while (i2 != m) add(arr2, ans, i2++);
         return ans;
     }
 
