@@ -16,13 +16,13 @@ public class User {
 
 		private final String lastName; // required
 
-		private final int age; // Optional
+		private int age; // Optional
 
-		private final String phone; // Optional
+		private String phone; // Optional
 
 		public UserBuilder(String firstName, String lastName) {
 			this.firstName = firstName;
-			this.lastName = lastname;
+			this.lastName = lastName;
 		}
 
 		public UserBuilder age(int age) {
@@ -72,7 +72,6 @@ public class User {
 
 	@Override
 		public String toString() {
-		return "User: "+this.firstName+", "+this.lastName+", "+this.age+",
-		"+this.phone+", "+this.address;
+		return "User: "+this.firstName+", "+this.lastName+", "+this.age+", "+this.phone+", ";
 		}
 }
