@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class UnionTwoArrays {
 
     private static void add(int arr[], ArrayList<Integer> result, int idx) {
-        if (arr[idx] != result.get(result.size()-1)) {
+        if (arr[idx] != result.get(result.size() - 1)) {
             result.add(arr[idx]);
         }
     }
