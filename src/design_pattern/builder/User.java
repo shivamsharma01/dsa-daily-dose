@@ -2,76 +2,76 @@ package design_pattern.builder;
 
 public class User {
 
-	// All final attributes
-	private final String firstName; // required
+    // All final attributes
+    private final String firstName; // required
 
-	private final String lastName; // required
+    private final String lastName; // required
 
-	private final int age; // Optional
+    private final int age; // Optional
 
-	private final String phone; // Optional
+    private final String phone; // Optional
 
-	public static class UserBuilder {
-		private final String firstName; // required
+    private User(UserBuilder builder) {
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
+        this.age = builder.age;
+        this.phone = builder.phone;
+    }
 
-		private final String lastName; // required
+    public String getFirstName() {
+        return firstName;
+    }
 
-		private int age; // Optional
+    public String getLastName() {
+        return lastName;
+    }
 
-		private String phone; // Optional
+    public int getAge() {
+        return age;
+    }
 
-		public UserBuilder(String firstName, String lastName) {
-			this.firstName = firstName;
-			this.lastName = lastName;
-		}
+    public String getPhone() {
+        return phone;
+    }
 
-		public UserBuilder age(int age) {
-			this.age = age;
-			return this;
-		}
+    @Override
+    public String toString() {
+        return "User: " + this.firstName + ", " + this.lastName + ", " + this.age + ", " + this.phone + ", ";
+    }
 
-		public UserBuilder phone(String phone) {
-			this.phone = phone;
-			return this;
-		}
+    public static class UserBuilder {
+        private final String firstName; // required
 
-		public User build() {
-			User user = new User(this);
-			validateUserObject(user);
-			return user;
-		}
+        private final String lastName; // required
 
-		private void validateUserObject(User user) {
-			// Do some basic validations to check
-			// if user object does not break any assumption of system
-		}
-	}
+        private int age; // Optional
 
-	private User(UserBuilder builder) {
-		this.firstName = builder.firstName;
-		this.lastName = builder.lastName;
-		this.age = builder.age;
-		this.phone = builder.phone;
-	}
+        private String phone; // Optional
 
-	public String getFirstName() {
-		return firstName;
-	}
+        public UserBuilder(String firstName, String lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
 
-	public String getLastName() {
-		return lastName;
-	}
+        public UserBuilder age(int age) {
+            this.age = age;
+            return this;
+        }
 
-	public int getAge() {
-		return age;
-	}
+        public UserBuilder phone(String phone) {
+            this.phone = phone;
+            return this;
+        }
 
-	public String getPhone() {
-		return phone;
-	}
+        public User build() {
+            User user = new User(this);
+            validateUserObject(user);
+            return user;
+        }
 
-	@Override
-		public String toString() {
-		return "User: "+this.firstName+", "+this.lastName+", "+this.age+", "+this.phone+", ";
-		}
+        private void validateUserObject(User user) {
+            // Do some basic validations to check
+            // if user object does not break any assumption of system
+        }
+    }
 }
