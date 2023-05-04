@@ -1,6 +1,5 @@
 package design_pattern.strategy;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +9,7 @@ public class ShoppingCart {
     List<Item> items;
 
     public ShoppingCart() {
-        this.items = new ArrayList<Item>();
+        this.items = new ArrayList<>();
     }
 
     public void addItem(Item item) {
