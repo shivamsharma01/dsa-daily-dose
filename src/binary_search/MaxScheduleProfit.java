@@ -8,7 +8,7 @@ import java.util.Comparator;
  */
 public class MaxScheduleProfit {
     public static void main(String[] args) {
-        int startTime[], endTime[], profit[];
+        int[] startTime, endTime, profit;
 
         startTime = new int[]{0, 1, 1, 4, 7};
         endTime = new int[]{4, 3, 5, 8, 11};
@@ -24,12 +24,12 @@ public class MaxScheduleProfit {
     private static int calculateMaxProfit(int[] startTime, int[] endTime, int[] profit) {
         int n = startTime.length;
 
-        Schedule schedules[] = new Schedule[n];
+        Schedule[] schedules = new Schedule[n];
         for (int i = 0; i < n; i++) schedules[i] = new Schedule(startTime[i], endTime[i], profit[i]);
 
         Arrays.sort(schedules, Comparator.comparingInt(o -> o.end));
 
-        int dpProfit[] = new int[n];
+        int[] dpProfit = new int[n];
 
         dpProfit[0] = schedules[0].profit;
         for (int i = 1; i < n; i++) {
@@ -52,9 +52,9 @@ public class MaxScheduleProfit {
     }
 
     static class Schedule {
-        int start;
-        int end;
-        int profit;
+        final int start;
+        final int end;
+        final int profit;
 
         public Schedule(int s, int e, int p) {
             this.start = s;

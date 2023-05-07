@@ -11,7 +11,10 @@ public class FindMinInRotatedArray {
 
 
     public static void main(String[] args) {
-        int n, maxVal, arr[], numRotations;
+        int n;
+        int maxVal;
+        int[] arr;
+        int numRotations;
 
         n = 15;
         maxVal = 100;
@@ -32,7 +35,7 @@ public class FindMinInRotatedArray {
         System.out.println("\n\n");
     }
 
-    private static int getMinFromRotatedArray(int arr[], int len) {
+    private static int getMinFromRotatedArray(int[] arr, int len) {
         int l = 0, r = len - 1, m;
         if (arr[l] < arr[r]) return arr[l];
         while (l < r) {

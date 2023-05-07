@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class LargestSubArrayWithValueK {
     public static void main(String[] args) {
-        int arr[], k;
+        int[] arr;
+        int k;
         arr = new int[]{1, 4, 5, 6, 10, -10};
         k = 15;
         System.out.println(getLargestSubArrayWithValueK(arr, k));
@@ -14,7 +15,6 @@ public class LargestSubArrayWithValueK {
 
     private static int getLargestSubArrayWithValueK(int[] arr, int k) {
         int maxSubArray = 0;
-        // key = prefix sum, val = index
         Map<Long, Integer> map = new HashMap<>();
         long sum = 0;
         for (int i = 0; i < arr.length; i++) {

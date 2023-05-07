@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class HeapSort {
 
-    public static void sort(int arr[]) {
+    public static void sort(int[] arr) {
         int n = arr.length;
 
         // build heap
@@ -20,7 +20,7 @@ public class HeapSort {
         }
     }
 
-    private static void heapify(int arr[], int i, int n) {
+    private static void heapify(int[] arr, int i, int n) {
         int indexWithLargestValue = i;
         int left = i * 2 + 1;
         int right = i * 2 + 2;
@@ -41,7 +41,7 @@ public class HeapSort {
 
 class HeapSortRunner {
     public static void main(String[] args) {
-        int arr[] = new int[]{21, 5, 1, 4, 2, 9, 3, 1, 14, 17, 4, 22};
+        int[] arr = new int[]{21, 5, 1, 4, 2, 9, 3, 1, 14, 17, 4, 22};
         System.out.println(Arrays.toString(arr));
         HeapSort.sort(arr);
         System.out.println(Arrays.toString(arr));
