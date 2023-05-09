@@ -1,6 +1,6 @@
 package strivers.arrays.medium;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class NextPermutation {
     public static void nextGreaterPermutation(int[] a) {

@@ -9,7 +9,7 @@ public class StockBuyAndSell {
      */
 
     public static void main(String[] args) {
-        int arr[] = {7,1,5,3,6,4};
+        int[] arr = {7, 1, 5, 3, 6, 4};
         int maxPro = maxProfit(arr);
         System.out.println("Max profit is: " + maxPro);
     }
@@ -18,9 +18,9 @@ public class StockBuyAndSell {
         int l = arr[0];
         int max = 0;
 
-        for(int i = 0; i < arr.length; i++) {
-            max = Math.max(arr[i] - l, max);
-            l = Math.min(l, arr[i]);
+        for (int j : arr) {
+            max = Math.max(j - l, max);
+            l = Math.min(l, j);
         }
         return max;
     }

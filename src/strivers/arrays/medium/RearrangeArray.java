@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class RearrangeArray {
     public static int[] rearrangeArray(int[] nums) {
-        int posIdx = 0; int negIdx = 1;
+        int posIdx = 0;
+        int negIdx = 1;
         int[] arr = new int[nums.length];
 
         for (int num : nums) {
@@ -20,7 +21,7 @@ public class RearrangeArray {
     }
 
     public static void main(String[] args) {
-        int[] ar = new int[]{2,-3,4,5,-6,-7,8,9,-1,-2,3,-4,5,-6,7,-21};
+        int[] ar = new int[]{2, -3, 4, 5, -6, -7, 8, 9, -1, -2, 3, -4, 5, -6, 7, -21};
         System.out.println(Arrays.toString(rearrangeArray(ar)));
     }
 }

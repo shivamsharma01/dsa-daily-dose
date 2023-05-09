@@ -1,4 +1,4 @@
-package strivers.arrays;
+package strivers.arrays.easy;
 
 import java.util.ArrayList;
 
