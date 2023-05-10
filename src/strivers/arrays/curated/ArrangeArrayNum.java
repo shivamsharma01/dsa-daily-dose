@@ -1,4 +1,4 @@
-package strivers.arrays.practice;
+package strivers.arrays.curated;
 
 import java.util.Arrays;
 import java.util.Scanner;
