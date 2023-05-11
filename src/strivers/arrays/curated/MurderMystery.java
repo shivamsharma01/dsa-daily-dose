@@ -1,4 +1,4 @@
-package strivers.arrays.practice;
+package strivers.arrays.curated;
 
 import java.io.BufferedReader;
 import java.io.IOException;
